@@ -8,7 +8,7 @@
         <label for="name">Name:</label>
         <input autocomplete="off" autofocus name="name" aria-placeholder="Enter your name" type="text">
         <label for="gender">Gender:</label>
-        <select name="gender" required>
+        <select name="gender">
           <option disabled selected value="">Gender</option>
           {% for gender in genders %}
             <option value="{{ gender }}">{{ gender }}</option>

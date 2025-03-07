@@ -14,6 +14,15 @@ def index():
     
 @app.route("/register", methods=["POST"])
 def register():
-   if not request.form.get("name") or request.form.get("gender") not in GENDERS:
-      return render_template("failure.html")
+   name = request.form.get("name")
+   if not name:
+       return render_template("failure.html", message="You must provide a name.")
+   
+   gender = request.form.get("gender")
+   if not gender:
+       return render_template("failure.html", message="You must provide a gender.")
+   
+   if gender not in GENDERS:
+        return render_template("failure.html", message="You must select from the available genders.")
+   
    return render_template("success.html")
