@@ -6,4 +6,4 @@ app = Flask(__name__)
 
 
 def hellow_world():
-    return 'Hello, World!'
+    return "<!DOCTYPE html><html lang='en'><head><title>PHP Test</title></head><body>Hello World!</body></html>"
