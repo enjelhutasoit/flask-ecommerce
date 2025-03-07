@@ -1,9 +1,8 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
-
-
+@app.route("/")
 def hellow_world():
-    return "<!DOCTYPE html><html lang='en'><head><title>PHP Test</title></head><body>Hello World!</body></html>"
+    name = request.args.get("name", "World")
+    return render_template("index.html", name=name)
