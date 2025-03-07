@@ -8,6 +8,8 @@ GENDERS = [
     "Prefer not to say"
 ]
 
+RESIGTRANTS = {}
+
 @app.route("/")
 def index():
       return render_template("index.html", genders=GENDERS)
@@ -25,4 +27,10 @@ def register():
    if gender not in GENDERS:
         return render_template("failure.html", message="You must select from the available genders.")
    
+   RESIGTRANTS[name] = gender
+
    return render_template("success.html")
+
+@app.route("/registrants")
+def registrants():
+    return render_template("registrants.html", registrants=RESIGTRANTS)
