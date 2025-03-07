@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
+
 {% block body %}
-    Hello, {{ name }}!
+
+    <form method="post">
+        <label for="name">Name:</label>
+        <input autocomplete="off" autofocus name="name" aria-placeholder="Enter your name" type="text">
+        <button type="submit">Submit</button>
+    </form>
+
 {% endblock %}
