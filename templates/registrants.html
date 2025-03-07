@@ -3,10 +3,19 @@
 {% block body %}
 
   <h1>Registrants</h1>
-  <ul>
-    {% for name in registrants %}
-      <li>{{ name }}</li>
-    {% endfor %}
-  </ul>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+    </tr>
+    <tbody>
+      {% for name in registrants %}
+        <tr>
+          <td>{{ name }}</td>
+          <td>{{ registrants[name] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
 
 {% endblock %}
