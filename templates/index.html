@@ -2,19 +2,10 @@
 
 {% block body %}
 
-    <h1>Register</h1>
-    <p>Please enter your name:</p>
-    <form action="/register" method="post">
-        <label for="name">Name:</label>
-        <input autocomplete="off" autofocus name="name" aria-placeholder="Enter your name" type="text">
-        <label for="gender">Gender:</label>
-        <select name="gender">
-          <option disabled selected value="">Gender</option>
-          {% for gender in genders %}
-            <option value="{{ gender }}">{{ gender }}</option>
-          {% endfor %}
-        </select>
-        <button type="submit">Register</button>
-    </form>
-
+  {% if name %}
+    You are logged in as {{ name }}. <a href="/logout">Log out</a>
+  {% else %}
+    You are not logged in. <a href="/login">Log in</a>
+  {% endif %}
+  
 {% endblock %}
